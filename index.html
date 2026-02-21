@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ניהול מעקב לימודים</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ========= מסך כיתות ========= -->
+    <div id="classesScreen">
+      <h1>הכיתות שלי</h1>
+      <div id="classesContainer" class="classes-grid"></div>
+      <button id="addClassBtn" class="add-btn">+ הוסף כיתה</button>
+    </div>
+
+
+    <!-- ========= מסך חודשים ========= -->
+    <div id="monthsScreen" style="display:none;">
+
+      <button id="backToClasses" class="back-btn">← חזרה לכיתות</button>
+
+      <h1 id="monthsTitle"></h1>
+
+      <div id="monthsContainer" class="classes-grid"></div>
+
+      <button id="addMonthBtn" class="add-btn">+ הוסף חודש</button>
+
+    </div>
+
+    <!-- ========= מסך מעקב ========= -->
+<div id="trackingScreen" style="display:none;">
+
+  <button id="backToMonths" class="back-btn">← חזרה לחודשים</button>
+
+  <h1 id="trackingTitle"></h1>
+
+  <table class="tracking-table">
+    <thead>
+      <tr>
+        <th>יום</th>
+        <th>תאריך</th>
+        <th>סטטוס</th>
+        <th>הערות</th>
+      </tr>
+    </thead>
+    <tbody id="trackingBody"></tbody>
+  </table>
+
+  <button id="addDayBtn" class="add-btn">+ הוסף יום</button>
+
+</div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
