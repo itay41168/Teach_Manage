@@ -12,9 +12,9 @@ body {
 
 .container {
   max-width: 1000px;
-  margin: 30px auto;
-  padding: 25px;
-  background: #ffffff;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
@@ -24,9 +24,9 @@ body {
 ========================= */
 h1 {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: #34495e;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: 0.5px;
 }
 
@@ -42,9 +42,9 @@ button {
 }
 
 .add-btn {
-  padding: 10px 18px;
+  padding: 10px 16px;
   background-color: #3498db;
-  color: white;
+  color: #fff;
   border-radius: 10px;
   margin: 6px 0;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -58,7 +58,7 @@ button {
 .back-btn {
   padding: 8px 14px;
   background-color: #95a5a6;
-  color: white;
+  color: #fff;
   border-radius: 8px;
   margin-bottom: 18px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -71,7 +71,7 @@ button {
 
 .delete-btn, .delete-row-btn {
   background-color: #e74c3c;
-  color: white;
+  color: #fff;
   border-radius: 8px;
   padding: 5px 10px;
   font-size: 13px;
@@ -89,13 +89,13 @@ button {
 .classes-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
   justify-content: center;
 }
 
 .class-card {
   background: linear-gradient(145deg, #ecf0f1, #dfe6e9);
-  padding: 18px 22px;
+  padding: 16px 20px;
   border-radius: 14px;
   cursor: pointer;
   position: relative;
@@ -108,7 +108,7 @@ button {
 }
 
 .class-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.12);
   background: linear-gradient(145deg, #dfe6e9, #b2bec3);
 }
@@ -139,6 +139,7 @@ button {
   padding: 12px 8px;
   text-align: center;
   border-bottom: 1px solid #e0e0e0;
+  white-space: nowrap;
 }
 
 .tracking-table th {
@@ -191,13 +192,21 @@ button {
 }
 
 /* =========================
-   רספונסיבי
+   רספונסיבי - טאבלט
 ========================= */
 @media (max-width: 768px) {
-  .tracking-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+  .container {
+    padding: 15px;
+  }
+
+  .classes-grid {
+    gap: 10px;
+  }
+
+  .class-card {
+    min-width: 70px;
+    padding: 12px 14px;
+    font-size: 14px;
   }
 
   .tracking-table th,
@@ -206,10 +215,10 @@ button {
     font-size: 12px;
   }
 
-  .class-card {
-    min-width: 75px;
-    padding: 12px 16px;
-    font-size: 14px;
+  .tracking-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
   button {
@@ -218,16 +227,53 @@ button {
   }
 }
 
+/* =========================
+   רספונסיבי - פלאפון
+========================= */
 @media (max-width: 480px) {
-  .tracking-table input, .tracking-table select {
-    width: 80%;
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .classes-grid {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .class-card {
+    min-width: 100%;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .tracking-table input,
+  .tracking-table select {
+    width: 90%;
     font-size: 11px;
     padding: 4px;
   }
 
-  .class-card {
-    min-width: 60px;
-    padding: 10px;
+  .tracking-table th,
+  .tracking-table td {
+    font-size: 11px;
+    padding: 6px;
+  }
+
+  button {
     font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  #exportExcelBtn, #statsBtn, .add-btn, .back-btn {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
   }
 }
