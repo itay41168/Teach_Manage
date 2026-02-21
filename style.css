@@ -8,6 +8,7 @@ body {
   padding: 0;
   direction: rtl;
   color: #2c3e50;
+  font-size: 16px;
 }
 
 .container {
@@ -16,7 +17,7 @@ body {
   padding: 20px;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 /* =========================
@@ -26,8 +27,8 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #34495e;
-  font-size: 26px;
-  letter-spacing: 0.5px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 /* =========================
@@ -35,53 +36,30 @@ h1 {
 ========================= */
 button {
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   transition: all 0.2s ease;
   border: none;
 }
 
-.add-btn {
-  padding: 10px 16px;
-  background-color: #3498db;
-  color: #fff;
-  border-radius: 10px;
-  margin: 6px 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+.add-btn, .back-btn, .delete-btn, .delete-row-btn, #exportExcelBtn, #statsBtn {
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 8px 0;
 }
 
-.add-btn:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
-}
+.add-btn { background-color: #3498db; color: #fff; }
+.add-btn:hover { background-color: #2980b9; }
 
-.back-btn {
-  padding: 8px 14px;
-  background-color: #95a5a6;
-  color: #fff;
-  border-radius: 8px;
-  margin-bottom: 18px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+.back-btn { background-color: #95a5a6; color: #fff; }
+.back-btn:hover { background-color: #7f8c8d; }
 
-.back-btn:hover {
-  background-color: #7f8c8d;
-  transform: translateY(-1px);
-}
+.delete-btn, .delete-row-btn { background-color: #e74c3c; color: #fff; }
+.delete-btn:hover, .delete-row-btn:hover { background-color: #c0392b; }
 
-.delete-btn, .delete-row-btn {
-  background-color: #e74c3c;
-  color: #fff;
-  border-radius: 8px;
-  padding: 5px 10px;
-  font-size: 13px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.delete-btn:hover, .delete-row-btn:hover {
-  background-color: #c0392b;
-  transform: translateY(-1px);
-}
+#exportExcelBtn, #statsBtn { background-color: #2ecc71; color: #fff; }
+#exportExcelBtn:hover, #statsBtn:hover { background-color: #27ae60; }
 
 /* =========================
    כרטיסי כיתה / חודש
@@ -89,19 +67,20 @@ button {
 .classes-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
   justify-content: center;
 }
 
 .class-card {
   background: linear-gradient(145deg, #ecf0f1, #dfe6e9);
-  padding: 16px 20px;
-  border-radius: 14px;
+  padding: 20px;
+  border-radius: 16px;
   cursor: pointer;
   position: relative;
-  min-width: 90px;
+  min-width: 120px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 18px;
   color: #2c3e50;
   box-shadow: 0 6px 12px rgba(0,0,0,0.08);
   transition: all 0.2s ease;
@@ -115,38 +94,37 @@ button {
 
 .class-card button.delete-btn {
   position: absolute;
-  top: 5px;
-  left: 5px;
-  padding: 3px 6px;
-  font-size: 12px;
+  top: 8px;
+  left: 8px;
+  padding: 4px 6px;
+  font-size: 14px;
 }
 
 /* =========================
-   טבלת מעקב
+   טבלת מעקב – desktop
 ========================= */
 .tracking-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .tracking-table th,
 .tracking-table td {
-  padding: 12px 8px;
+  padding: 14px 10px;
   text-align: center;
   border-bottom: 1px solid #e0e0e0;
-  white-space: nowrap;
+  font-size: 16px;
 }
 
 .tracking-table th {
   background-color: #3498db;
   color: #fff;
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 700;
 }
 
 .tracking-table tbody tr:nth-child(even) {
@@ -155,125 +133,105 @@ button {
 
 .tracking-table tbody tr:hover {
   background-color: #ecf0f1;
-  transition: background-color 0.2s;
 }
 
 .tracking-table input, .tracking-table select {
   width: 90%;
-  padding: 6px 8px;
-  border-radius: 6px;
+  padding: 8px 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   text-align: center;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .tracking-table input:focus, .tracking-table select:focus {
   outline: none;
   border-color: #3498db;
-  box-shadow: 0 0 6px rgba(52,152,219,0.4);
+  box-shadow: 0 0 8px rgba(52,152,219,0.4);
 }
 
 /* =========================
-   כפתורי פעולות נוספות
-========================= */
-#exportExcelBtn, #statsBtn {
-  background-color: #2ecc71;
-  color: white;
-  border-radius: 10px;
-  padding: 8px 14px;
-  margin: 5px 5px 15px 5px;
-  font-size: 13px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-#exportExcelBtn:hover, #statsBtn:hover {
-  background-color: #27ae60;
-  transform: translateY(-1px);
-}
-
-/* =========================
-   רספונסיבי - טאבלט
+   רספונסיבי – tablet
 ========================= */
 @media (max-width: 768px) {
-  .container {
-    padding: 15px;
-  }
-
-  .classes-grid {
-    gap: 10px;
-  }
-
-  .class-card {
-    min-width: 70px;
-    padding: 12px 14px;
-    font-size: 14px;
-  }
-
-  .tracking-table th,
-  .tracking-table td {
-    padding: 8px;
-    font-size: 12px;
-  }
-
-  .tracking-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  button {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
+  .classes-grid { gap: 12px; }
+  .class-card { min-width: 100px; font-size: 16px; padding: 16px; }
+  .tracking-table th, .tracking-table td { font-size: 14px; padding: 10px; }
+  .tracking-table input, .tracking-table select { font-size: 14px; padding: 6px; }
+  button { font-size: 14px; padding: 10px 14px; }
 }
 
 /* =========================
-   רספונסיבי - פלאפון
+   רספונסיבי – mobile
 ========================= */
 @media (max-width: 480px) {
+
   .container {
     margin: 10px;
-    padding: 10px;
+    padding: 12px;
   }
 
-  h1 {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
+  h1 { font-size: 20px; margin-bottom: 12px; }
 
   .classes-grid {
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     align-items: stretch;
   }
 
   .class-card {
     min-width: 100%;
-    padding: 10px;
-    font-size: 13px;
+    font-size: 18px;
+    padding: 18px;
   }
 
-  .tracking-table input,
-  .tracking-table select {
-    width: 90%;
-    font-size: 11px;
-    padding: 4px;
+  .tracking-table, .tracking-table thead, .tracking-table tbody, .tracking-table th, .tracking-table td, .tracking-table tr {
+    display: block;
+    width: 100%;
   }
 
-  .tracking-table th,
-  .tracking-table td {
-    font-size: 11px;
-    padding: 6px;
+  .tracking-table thead {
+    display: none;
+  }
+
+  .tracking-table tbody tr {
+    margin-bottom: 16px;
+    border-radius: 12px;
+    background: #f7f9fb;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  .tracking-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .tracking-table tbody td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    flex: 1;
+    text-align: left;
+  }
+
+  .tracking-table input, .tracking-table select {
+    width: 70%;
+    font-size: 16px;
   }
 
   button {
-    font-size: 12px;
-    padding: 6px 10px;
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
   }
 
   #exportExcelBtn, #statsBtn, .add-btn, .back-btn {
     width: 100%;
     box-sizing: border-box;
-    margin: 5px 0;
+    margin: 8px 0;
   }
 }
